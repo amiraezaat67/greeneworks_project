@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "866ea11f-db46-413c-b0bd-bca7e8d0da3d",
+		"name": "greeneworks_project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23473828"
+	},
+	"item": [
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"amira\",\r\n    \"email\":\"amiraezaatwork@gmail.com\",\r\n    \"password\":\"Amira1122\",\r\n    \"cPassword\":\"Amira1122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "- **API Goal:**  \n    regisration API\n    \n- **API Request:**  \n    **Body** : {  \n    \"username\":\"amira ezaat\", \"email\":\"[amiraezaatwork@gmail.com](https://mailto:amiraezaat@gmail.com)\", \"password\":\"Amira1122\",  \n    \"cPassword\":\"Amira1122\"  \n    }\n    \n- **Data validation:  \n    1- username** must be string and required  \n    2- **email** must be string and valid email format with domain(.com) and required  \n    3- **password** must be string and match the pattern ( capital char, small chars , numbers) and required  \n    4- **cPassword** must be string and match the pattern of the password field and required  \n    5- **role** must be string and have the value User or Admin with case sensitivity, it's an optional field if you didn't send it, it will be set to User"
+			},
+			"response": []
+		},
+		{
+			"name": "LogIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"amiraezaatwork@gmail.com\",\r\n    \"password\":\"Amira1122\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				},
+				"description": "**API Goal:** Login API  \n**API Request:**  \nBody : {  \n\"email\":\"[amiraezaatwork@gmail.com](https://mailto:amiraezaatwork@gmail.com)\", \"password\":\"Amira1122\"  \n}  \n**Data validation:**  \n1- email must be string and valid email format with domain(.com and .org) and required  \n2- password must be string and match the pattern ( capital char, small chars , numbers) and requiredEndFragment"
+			},
+			"response": []
+		},
+		{
+			"name": "update account",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "greeneworks__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJhZXphYXR3b3JrQGdtYWlsLmNvbSIsIl9pZCI6IjY1NmEzNWQwYzA2ZjFmYjE2YTM1NmFjZSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNDU5NDEyLCJleHAiOjE3MDE0NjMwMTJ9.l4cGVNg8RMgOitK92Kdxoekbj-DXxIxqumh5Vk_PV_w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"username\":\"ahmed\",\r\n    \"email\":\"amiraezaatwork@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				},
+				"description": "**API Goal:** update account after check if the user loggedIn user or not  \n**API Request:**   \n**Body** : {     \n\"email\":\"amiraezaatwork@gmail.com\",   \"username\":\"amira\"  \n }  \n  **Headers**:{     \n\"authorization\":\"greeneworks__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJhZXphYXR3b3JrQGdtYWlsLmNvbSIsIl9pZCI6IjY1NmEyNGQ0YjdlOWVmNDA2OTc1Yzg0NSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNDU2NDAyLCJleHAiOjE3MDE0NjAwMDJ9.J6_h_aWBcj8kr6ITnH3mRSffMVR4NhtCd_A5dx-fhtg\"  \n  }  \n**Data validation:**   \n1- **email** must be string, valid email format with domain(.com and .org) and it's optional   \n2- **username** must be string with minmum length 5 characters , maximum length is 10 characters and optional  3- **authorization** must be string, sent into req.headers and it's required"
+			},
+			"response": []
+		},
+		{
+			"name": "delete account",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "greeneworks__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJhZXphYXR3b3JrQGdtYWlsLmNvbSIsIl9pZCI6IjY1NmEyNGQ0YjdlOWVmNDA2OTc1Yzg0NSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNDU2NDAyLCJleHAiOjE3MDE0NjAwMDJ9.J6_h_aWBcj8kr6ITnH3mRSffMVR4NhtCd_A5dx-fhtg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				},
+				"description": "**API Goal:** delete the account of the loggedIn User  \n**API Request:**   \n**Headers**:{    \"authorization\":\"greeneworks__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFtaXJhZXphYXR3b3JrQGdtYWlsLmNvbSIsIl9pZCI6IjY1NmEyNGQ0YjdlOWVmNDA2OTc1Yzg0NSIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNzAxNDU2NDAyLCJleHAiOjE3MDE0NjAwMDJ9.J6_h_aWBcj8kr6ITnH3mRSffMVR4NhtCd_A5dx-fhtg\"  \n  }  \n**Data validation:**   \n1- authorization must be string, sent into req.headers , must starts with ( greeneworks__ ) then the access token and it's required"
+			},
+			"response": []
+		}
+	]
+}
